@@ -1,0 +1,297 @@
+//Q1 WAP to read a user's name and age
+#include<iostream>
+using namespace std;
+int main()
+{
+	int age;
+	char name[50];
+	cout<<"enter name";
+	cin.getline(name,50);
+	cout<<"enter your age";
+	cin>>age;
+	cout<<"hello "<<name<<", you are "<<age<<" years old!";
+               return 0;
+}
+
+//Q2 WAP to input 2 integers and display their sum
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num1;
+	int num2;
+	cout<<"enter first number";
+	cin>>num1;
+	cout<<"enter second number";
+	cin>>num2;
+	cout<<"The sum is "<<num1+num2;
+               return 0;
+}
+
+//Q3 WAP to ask 2 nos. and mathematical operator and display the result
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	int a,b,choice;
+	cout<<"enter a";
+	cin>>a;
+	cout<<"enter b";
+	cin>>b;
+	cout<<"enter choiceno.(1:sum, 2:difference, 3:product, 4:division)";
+	cin>>choice;
+	switch(choice)
+	{
+		case 1:
+			cout<<"add"<<a+b;
+			break;
+		case 2:
+			cout<<"sub"<<a-b;
+			break;
+		case 3:
+			cout<<"mul"<<a*b;
+			break;
+		case 4:
+			cout<<"div"<<a/b;
+			break;
+		default:
+			cout<<"invalid choice";
+	}
+return 0;
+}
+//Q4 Take two floating point numbers as input and display their division result with 2 decimal places
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+  double num1, num2;
+
+  cout << "Enter the first floating-point number: ";
+  cin >> num1;
+
+  cout << "Enter the second floating-point number: ";
+  cin >> num2;
+
+  double result = num1 / num2;
+  cout << "The division result is: " << fixed <<setprecision(2) << result << endl;
+
+  return 0;
+}
+//Q5 WAP to calculate compound interest
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+const int freq = 1; 
+
+int main() {
+  double principal, rate, time, amount,compoundInterest;
+
+  cout << "Enter principal amount: ";
+  cin >> principal;
+
+  cout << "Enter interest rate (as a decimal): ";
+  cin >> rate;
+
+  cout << "Enter time period (in years): ";
+  cin >> time;
+
+  amount = principal * pow(1 + rate / freq, freq * time);
+  compoundInterest = amount - principal;
+
+  cout << "Compound Interest: " << compoundInterest << endl;
+
+  return 0;
+}
+
+//Q6 WAP to calculate perimeter and area of a rectangle
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  float length, breadth, area, perimeter;
+
+  cout << "Enter the length of the rectangle: ";
+  cin >> length;
+
+  cout << "Enter the breadth of the rectangle: ";
+  cin >> breadth;
+
+  area = length * breadth;
+  perimeter = 2 * (length + breadth);
+
+  cout << "Area of the rectangle: " << area << endl;
+  cout << "Perimeter of the rectangle: " << perimeter << endl;
+
+  return 0;
+}
+//Q7 Swap two numbers using a variable 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 1, b = 2, temp;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "After swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
+//Q7 without variable
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    int a = 1, b = 2;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    cout << "After swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
+
+//Q8 Wap that takes user’s name and age and displays greeting with the number of days the user has lived
+#include<iostream>
+using namespace std;
+int main()
+{
+	int age;
+	char name[50];
+	cout<<"enter name";
+	cin.getline(name,50);
+	cout<<"enter your age";
+	cin>>age;
+	int days = age*365;
+	cout<<"Greetings "<<name<<", you have lived "<<days<<" days";
+    return 0;
+}
+
+//Q9 WAP that inputs a character, an integer and a floating point number and displays in a formatted table
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+    char character;
+    int integer;
+    double float_num;
+
+    cout << "Enter a character: ";
+    cin >> character;
+
+    cout << "Enter an integer: ";
+    cin >> integer;
+
+    cout << "Enter a floating-point number: ";
+    cin >> float_num;
+
+    cout << "\n";
+    cout << "-----------------------------\n";
+    cout << " Data Type | Value         \n";
+    cout << "-----------------------------\n";
+    cout << " Character  " << character << " \n";
+    cout << " Integer    " << integer << " \n";
+    cout << " Float      " << fixed << setprecision(2) << float_num << " \n";
+    cout << "-----------------------------\n";
+
+    return 0;
+}
+Q10 Takes two numbers and finds if the first is a multiple of second
+#include <iostream>
+using namespace std;
+int main() {
+    int num1, num2;
+
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    bool isMultiple = (num2 != 0) && (num1 % num2 == 0);
+
+    if (isMultiple) {
+        cout << num1 << " is a multiple of " << num2 << endl;
+    } else {
+        cout << num1 << " is not a multiple of " << num2 << endl;
+    }
+
+    return 0;
+}
+
+//Q12 WAP to solve a quadratic equation
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    double a, b, c, discriminant, root1, root2;
+
+    cout << "Enter the coefficients a, b, c for equation in the form ax^2 + bx + c = 0:" << endl;
+    cout << "Enter value for a: ";
+    cin >> a;
+    cout << "Enter value for b: ";
+    cin >> b;
+    cout << "Enter value for c: ";
+    cin >> c;
+
+    discriminant = b * b - 4 * a * c;
+
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        cout << "The roots are real and distinct:" << endl;
+        cout << "x1 = " << fixed << setprecision(6) << root1 << endl;
+        cout << "x2 = " << fixed << setprecision(6) << root2 << endl;
+    } else if (discriminant == 0) {
+        root1 = -b / (2 * a);
+        cout << "The roots are real and equal:" << endl;
+        cout << "x1 = x2 = " << fixed << setprecision(6) << root1 << endl;
+    } else 
+         
+        cout << "The roots are imaginary" << endl;
+        
+    
+
+    return 0;
+}
+
+//Q14 WAP to determine if triangle is valid and determine the type of triangle
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int side1, side2, side3;
+
+    cout << "Enter the lengths of the three sides of the triangle: ";
+    cin >> side1 >> side2 >> side3;
+
+    if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
+        cout << "The triangle is not valid." << endl;
+    } else {
+        if (side1 == side2 && side2 == side3) {
+            cout << "The triangle is equilateral." << endl;
+        } else if (side1 == side2 || side1 == side3 || side2 == side3) {
+            cout << "The triangle is isosceles." << endl;
+        } else {
+            cout << "The triangle is scalene." << endl;
+        }
+    }
+
+    return 0;
+}
