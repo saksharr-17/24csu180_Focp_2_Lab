@@ -1,0 +1,379 @@
+//Q16
+#include<iostream>
+using namespace std;
+
+	bool opposite (int a,int b)
+	{
+	 return a^b<0;	
+	}
+	
+int main()
+{
+	int a,b;
+	cin>>a>>b;
+	if (opposite (a,b))
+	
+	cout<<"yes";
+	else 
+	cout<<"no";	
+}
+
+//Q18
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a;
+    cout << "enter an integer " << endl;
+    cin>>a;
+    cout << "a << 1 = " << (a << 1) << endl;
+    cout << "a >> 1 = " << (a >> 1) << endl;
+  
+    return 0;
+}
+
+//Q19
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string studentName;
+    int marks;
+
+    cout << "Enter student name: ";
+    getline(cin, studentName); 
+
+    cout << "Enter marks (0-100): ";
+    cin >> marks;
+
+
+    char grade;
+
+    if (marks >= 90) {
+        grade = 'A';
+    } else if (marks >= 80) {
+        grade = 'B';
+    } else if (marks >= 70) {
+        grade = 'C';
+    } else if (marks >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F';
+    }
+
+    cout << "Student Name: " << studentName << endl<<"Marks: " << marks << endl<< "Grade: " << grade <<endl;
+
+    return 0;
+}
+
+
+//q20
+#include <iostream>
+using namespace std;
+
+int main() {
+    int choice;
+    double num1, num2, result;
+
+    do {
+        cout << "1. Addition" << endl;
+        cout << "2. Subtraction" << endl;
+        cout << "3. Multiplication" << endl;
+        cout << "4. Division" << endl;
+        cout << "5. Exit" << endl;
+
+        cout << "Enter first number: ";
+        cin>>num1;
+
+        cout << "Enter second number: ";
+        cin>>num2;
+        
+        cout << "Enter your choice (1-5): "<<endl;
+        cin>>choice;
+
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                cout << "Result: " << result << endl;
+                break;
+            case 2:
+                result = num1 - num2;
+                cout << "Result: " << result << endl;
+                break;
+            case 3:
+                result = num1 * num2;
+                cout << "Result: " << result << endl;
+                break;
+            case 4:
+                if (num2 == 0) {
+                    cout << "Error: Division by zero!" << endl;
+                } else {
+                    result = num1 / num2;
+                    cout << "Result: " << result << endl;
+                }
+                break;
+            case 5:
+                cout<<"exiting calculator";
+                break;    
+            default: 
+                cout << "Invalid choice." << endl;
+        }
+
+    } while (choice!=5); 
+
+    return 0;
+}
+
+// Q21 year is a leap year or not
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int year;
+	cout<<"enter a year";
+	cin>>year;
+
+	if (year % 400 == 0) {
+		cout<<"it is a leap year";
+	}
+
+	else if (year % 100 == 0) {
+		cout<<"it is not a leap year";
+	}
+
+	else if (year % 4 == 0) {
+		cout<<"it is a leap year";
+	}
+
+	else {
+		cout<<"it is not a leap year";
+	}
+
+	return 0;
+}
+
+//Q22 fibonacci
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, t1 = 0, t2 = 1, nt = 0;
+
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; ++i) {
+        if(i == 1) {
+            cout << t1 << ", ";
+            continue;
+        }
+        if(i == 2) {
+            cout << t2 << ", ";
+            continue;
+        }
+        nt = t1 + t2;
+        t1 = t2;
+        t2 = nt;
+        
+        cout << nt << ", ";
+    }
+    return 0;
+}
+
+//Q23 prime
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num,i;
+    cout<<"enter a number";
+    cin>>num;
+    i=2;
+    while(i<=num-1)
+    {
+       if(num%i==0)
+       {
+           cout<<"not a prime number";
+           break;
+       }
+       i++;
+    }
+    if(i==num)
+    cout<<"prime number";
+
+    return 0;
+}
+
+//Q24 factorial
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a,f=1;
+    cout<<"enter a";
+    cin>>a;
+    do{
+        f=f*a;
+        a=a-1;
+    }
+    while(a>=1);
+    cout<<f;
+
+
+    return 0;
+}
+
+
+//q26
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter the number of prime numbers to generate: ";
+    cin >> n;
+
+    int count = 0; 
+    int num = 2;   
+
+    cout << "The first " << n << " prime numbers are: ";
+
+    while (count < n) {
+        bool isPrime = true; 
+
+        for (int i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                isPrime = false; 
+                break; 
+            }
+        }
+
+        if (isPrime) {
+            cout << num << " ";
+            count++; 
+        }
+
+        num++; 
+    }
+
+    cout << endl; 
+    return 0;
+}
+
+
+
+//q27
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int main() {
+    int lower, upper;
+
+    cout << "Enter the lower bound of the range: ";
+    cin >> lower;
+    cout << "Enter the upper bound of the range: ";
+    cin >> upper;
+
+    cout << "Armstrong numbers between " << lower << " and " << upper << " are: ";
+
+    for (int num = lower; num <= upper; num++) {
+        int sum = 0;
+        int originalNum = num;
+        int digits = 0;
+
+        while (originalNum != 0) {
+            originalNum /= 10;
+            digits++;
+        }
+
+        originalNum = num; 
+
+        while (originalNum != 0) {
+            int digit = originalNum % 10; 
+            sum += pow(digit, digits); 
+            originalNum /= 10; 
+        }
+
+        if (sum == num) {
+            cout << num << " "; 
+        }
+    }
+
+    cout << endl; 
+    return 0;
+}
+
+//Q29
+#include <iostream>
+
+int main() {
+    int number = 51; 
+
+    while (true) {
+        if (number % 7 == 0) {
+            std::cout << "The first number greater than 50 that is divisible by 7 is: " << number << std::endl;
+            break; 
+        }
+        number++; 
+    }
+
+    return 0;
+}
+
+
+//q30
+#include <iostream>
+
+int main() {
+    int sum = 0; 
+
+    for (int i = 1; i <= 500; ++i) {
+        if (i % 3 == 0 && i % 7 == 0) {
+            continue; 
+        }
+
+        std::cout << i << std::endl;
+
+        sum += i;
+
+        if (sum > 1000) {
+            break; // Stop printing numbers
+        }
+    }
+
+    return 0;
+}
+
+//q31
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, originalNumber, reversedNumber = 0;
+    
+    cout << "Enter a number: ";
+    cin >> n;
+
+    originalNumber = n; 
+
+    while (n > 0) {
+        int digit = n % 10; 
+        reversedNumber = reversedNumber * 10 + digit; 
+        n = n/10; 
+
+        if (reversedNumber == originalNumber) {
+            cout << "Reversed number: " << reversedNumber << " (Palindrome found!)" << endl;
+            return 0;
+        }
+    }
+
+    cout << "Reversed number: " << reversedNumber << " (No palindrome found)" << endl;
+
+    return 0;
+}
+
+
