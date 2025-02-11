@@ -309,13 +309,13 @@ int main() {
 
 //Q29
 #include <iostream>
-
+using namespace std;
 int main() {
     int number = 51; 
 
     while (true) {
         if (number % 7 == 0) {
-            std::cout << "The first number greater than 50 that is divisible by 7 is: " << number << std::endl;
+            cout << "The first number greater than 50 that is divisible by 7 is: " << number << std::endl;
             break; 
         }
         number++; 
